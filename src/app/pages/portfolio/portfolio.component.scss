@@ -1,0 +1,119 @@
+@import '../../../variables.scss';
+#portfolio {
+    #portfolioTitle {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $main-color;
+        z-index: -2;
+        h2 {
+            font-size: 100px;
+            text-align: center;
+            color: red;
+        }
+    }
+    #portfolioTransparent {
+        width: 100vw;
+        height: 100vh;
+        background: transparent;
+    }
+    .productExample {
+        background-color: white;
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 50px;
+        transition: background-color 1s;
+        border-top: 1px solid $main-color;
+        .productLeft {
+            width: 400px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            h4 {
+                color: red;
+                transition: color 1.5s;
+            }
+            p {
+                transition: color 1s;
+                overflow: hidden;
+                text-overflow: clip;
+            }
+            button {
+                margin: 20px 0;
+                a {
+                    color: black;
+                    text-transform: uppercase;
+                }
+                a:hover {
+                    color: red;
+                    text-decoration: none;
+                }
+            }
+        }
+        .productRight {
+            img {
+                width: 450px;
+                height: 300px;
+                transition: transform 1s;
+            }
+        }
+    }
+    .productExample:hover {
+        background-color: $color-translucent;
+        transition: background-color 1s;
+        .productLeft {
+            h4 {
+                color: $main-color;
+                transition: color 1.5s;
+            }
+            p {
+                color: white;
+            }
+        }
+        .productRight {
+            img {
+                transform: scale(0.9);
+                transition: transform 1s;
+            }
+        }
+    }
+}
+@media (max-width: 500px) {
+    #portfolio {
+        #portfolioTitle {
+            h2 {
+                font-size: 50px;
+            }
+        }
+        .productExample {
+            padding: 50px 20px;
+            .productLeft {
+                width: 280px;
+            }
+            .productRight {
+                img {
+                    width: 270px;
+                    height: 180px;
+                }
+            }
+        }
+    }
+}
+@media (max-height: 500px) {
+    #portfolio {
+        #portfolioTitle {
+            h2 {
+                font-size: 70px;
+            }
+        }
+    }
+}

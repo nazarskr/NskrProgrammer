@@ -1,0 +1,9 @@
+<app-header></app-header>
+<div ngxUiLoaderBlurred blur="7">
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>
+<app-footer></app-footer>
+<ngx-ui-loader></ngx-ui-loader>
+<div #rendererContainer id="backgroundAnimation" (window:resize)="onResize()"></div>

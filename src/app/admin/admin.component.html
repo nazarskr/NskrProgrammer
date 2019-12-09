@@ -1,0 +1,40 @@
+<div class="page">
+    <mat-accordion class="example-headers-align">
+        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Blog
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-admin-blog></app-admin-blog>
+            <mat-action-row>
+                <button mat-stroked-button color="basic" (click)="nextStep()">Next</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Contacts
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-admin-contacts></app-admin-contacts>
+            <mat-action-row>
+                <button mat-stroked-button color="warn" (click)="prevStep()">Previous</button>
+                <button mat-stroked-button color="basic" (click)="nextStep()">Next</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Portfolio
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-admin-portfolio></app-admin-portfolio>
+            <mat-action-row>
+                <button mat-stroked-button color="warn" (click)="prevStep()">Previous</button>
+                <button mat-stroked-button color="basic" (click)="nextStep()">End</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+        
+    </mat-accordion>
+</div>

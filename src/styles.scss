@@ -1,0 +1,60 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import './variables.scss';
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: $main-font;
+}
+header {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+footer {
+    background-color: #1a1a1a;
+    width: 100vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.page {
+    width: 100vw;
+    min-height: 100vh;
+    padding-top: 100px;
+}
+.innerPage {
+    background: white;
+    min-height: 100vw;
+    padding: 5% 0;
+}
+.lowerButtons {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    margin-top: 20px;
+    button {
+        margin-right: 10px;
+    }
+}
+.myTable {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 1px dashed black;
+    td, th {
+        padding: 10px;
+        border: 1px dashed black;
+    }
+}
+.addingForm {
+    width: 60%;
+    background: white;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $main-font-bold;
+}

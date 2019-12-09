@@ -1,0 +1,16 @@
+<table class="myTable">
+    <tr>
+        <th>date</th>
+        <th>name</th>
+        <th>email</th>
+        <th>message</th>
+        <th>delete</th>
+    </tr>
+    <tr *ngFor="let contact of contactsData">
+        <td>{{contact.date.toDate() | date: 'dd/MM/yyyy, HH:mm'}}</td>
+        <td>{{contact.name}}</td>
+        <td>{{contact.email}}</td>
+        <td>{{contact.message}}</td>
+        <td><button mat-stroked-button (click)="deleteContact(contact)" color="warn">delete</button></td>
+    </tr>
+</table>

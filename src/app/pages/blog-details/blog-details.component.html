@@ -1,0 +1,13 @@
+<div id="blogDetails" [ngStyle]="{'backgroundColor': bgrColor}">
+    <div id="blogDetailsInner" *ngIf="this.blogpost !== undefined">
+        <div id="blogDetailsImage">
+            <img src="{{blogpost.imageUrl}}" alt="" srcset="">
+        </div>
+        <h3 id="blogDetailsTitle">{{blogpost.title}}</h3>
+        <p id="blogDetailsDate">{{blogpost.date.toDate() | date: 'dd/MM/yyyy, HH:mm'}}</p>
+        <p id="blogDetailsContent">{{blogpost.content}}</p>
+        <div id="goBackButton" (click)="goBack()">
+            <img src="../../../assets/images/left-arrow.png" alt="Left Arrow" srcset="">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div id="home" class="page" (window:scroll)="scrollingEvents()">
+    <div id="homeLogo" routerLink="home"></div>
+    <div id="nazarSkrypnyk">
+        <h1>Nazar Skrypnyk</h1>
+    </div>
+    <div id="homeTitle">
+        <h2>Front-end Developer and music composer</h2>
+        <div [@opacityElement]="meProgrammerVar? 'scroll' : 'static'" id="meProgrammer">
+            <img src="../../../assets/images/sova1.png" alt="Me Programmer" srcset="">
+        </div>
+    </div>
+    <div id="homeSayHello">
+        <h2 [@opacityElement]="homeSayHelloVar? 'scroll' : 'static'">Hi, I’m Nazar. Nice to meet you.</h2>
+        <p [@opacityElement]="homeSayHelloVar? 'scroll' : 'static'">I started my programming way from using Max/MSP for my music projects in 2018. 
+            Max/MSP is multifaceted environment for working with audio and video (creating, transforming and so on). 
+            Also it's useful thing for installations and interactive projects. 
+            When I was using Max/MSP I remembered my childhood dream which was inspired by George Platen - character from Asimov's novel "Profession": to become a programmer. 
+            Finally I decided to become front-end developer and started studying. 
+            This website is one of my projects, you also can view other my works below or in my <a routerLink="portfolio">Portfolio.</a></p>
+    </div>
+    <div id="homeRecentWorks">
+        <h2 [@scaleYElement]="homeRecentWorksVar? 'scroll' : 'static'">My Recent Works</h2>
+        <p [@scaleYElement]="homeRecentWorksVar? 'scroll' : 'static'">Here are a few recent web projects. Want to see more? <a href="mailto:nazarskrypnyk.programmer@gmail.com">Email me.</a></p>
+        <div id="myWorks">
+            <div class="myWorkExample" [@leftToRight]="homeRecentWorksVar? 'scroll' : 'static'" *ngFor="let product of portfolioData">
+                <img src="{{product.imageUrl}}" alt="product image" srcset="">
+                <div class="viewMoreExample">
+                    <h4 class="productName">{{product.name}}</h4>
+                    <p class="productDescription">{{product.description}}</p>
+                    <div class="moreExamples"><a href="{{product.url}}" target="_blank">View > </a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="homeMySkills">
+        <h2>My Skills</h2>
+        <hr>
+        <div id="mySkillsLists">
+            <div id="homeDevLanguages" class="mySkillsInner" [@leftToRight]="homeMySkillsVar? 'scroll' : 'static'">
+                <img src="../../../assets/images/languages.png" alt="programming languages" srcset="">
+                <h4>Languages I speak</h4>
+                <p>HTML<br/>CSS<br/>SASS<br/>JavaScript<br/>TypeScript<br/>Max/MSP<br/></p>
+            </div>
+            <div id="homeFrameworks" class="mySkillsInner" [@scaleXElement]="homeMySkillsVar? 'scroll' : 'static'">
+                <img src="../../../assets/images/libraries.png" alt="frameworks/libraries" srcset="">
+                <h4>Frameworks/Libraries</h4>
+                <p>Angular<br/>Bootstrap<br/>JQuery<br/>three.js<br/>reveal.js</p>
+            </div>
+            <div id="homeDevTools" class="mySkillsInner" [@rightToLeft]="homeMySkillsVar? 'scroll' : 'static'">
+                <img src="../../../assets/images/devtools.png" alt="developer tools" srcset="">
+                <h4>DevTools</h4>
+                <p>GitHub<br/>Firebase<br/>Web Audio API<br/>Visual Studio Code<br/></p>
+            </div>
+        </div>
+    </div>
+</div>

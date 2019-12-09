@@ -1,0 +1,18 @@
+<div class="page" id="portfolio" (window:scroll)="scrollingEvents()">
+    <div id="portfolioTitle">
+        <h2 [ngStyle]="{'opacity': titleOpacity}">Portfolio</h2>
+    </div>
+    <div id="portfolioTransparent" (click)="scrollUp()"></div>
+    <div class="productExample" *ngFor="let product of portfolioData">
+        <div class="productLeft">
+            <h4>{{product.name}}</h4>
+            <p><b>Release date:</b> {{product.date.toDate() | date: 'dd/MM/yyyy'}}</p>
+            <p><b>Stack:</b> {{product.stack}}</p>
+            <p><b>Description:</b> {{product.description}}</p>
+            <button mat-raised-button color="accent"><a href="{{product.url}}" target="_blank"><b>View</b></a></button>
+        </div>
+        <div class="productRight">
+            <img src="{{product.imageUrl}}" alt="product img" srcset="">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<header (window:scroll)="fixedScroll()">
+    <div id="menuArea">
+        <input type="checkbox" id="menuToggle">
+        <label for="menuToggle" class="menuOpen">
+            <div class="open"></div>
+        </label>
+        <div class="menu menuEffects" (click)="closeMenu()">
+            <label for="menuToggle"></label>
+            <div class="menuContent">
+                <ul>
+                    <li routerLinkActive="active"><a routerLink="home">Home</a></li>
+                    <li routerLinkActive="active"><a routerLink="portfolio">Portfolio</a></li>
+                    <li routerLinkActive="active"><a routerLink="blog">Blog</a></li>
+                    <li routerLinkActive="active"><a routerLink="contacts">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="scrollButton" (click)="scrollUp()" [@scrollButton]="isBigScroll? 'scroll' : 'static'">
+        <img src="../../../assets/images/arrow-top.png" alt="" srcset="">
+    </div>
+</header>
+

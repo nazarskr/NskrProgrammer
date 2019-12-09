@@ -1,0 +1,19 @@
+<div class="page" id="blog" (window:scroll)="scrollingEvents()">
+    <div id="blogLogo" [ngStyle]="{'opacity': logoOpacity}">
+        <span>B</span>
+        <span>L</span>
+        <span>O</span>
+        <span>G</span>
+    </div>
+    <div id="blogInner" class="innerPage">
+        <div #post class="blogPost" *ngFor="let blogPost of blogData; index as blogpostId" [id]="'blogpost' + blogpostId">
+            <div class="blogpostImage"><img src="{{blogPost.imageUrl}})}" alt="blogpost image"></div>
+            <h4 class="blogpostTitle">{{blogPost.title}}</h4>
+            <p class="blogpostDate">{{blogPost.date.toDate() | date: 'dd/MM/yyyy, HH:mm'}}</p>
+            <div class="blogpostText" [routerLink]="['/blog', blogpostId]">
+                <p>{{blogPost.content}}</p>
+                <span>Read more . . .</span>
+            </div>
+        </div>
+    </div>
+</div>

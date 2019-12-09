@@ -1,0 +1,262 @@
+@import '../../../variables.scss';
+#home {
+    position: relative;
+    #homeLogo {
+        position: absolute;
+        top: 30px; 
+        left: 40px;
+        width: 40px; 
+        height: 48px;
+        background-image: url('../../../assets/images/NS\ Logo.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        border: 0;
+    }
+    #nazarSkrypnyk {
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.1);
+        margin: 0;
+        height: 90px;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        h1 {
+            color: $text-color-alternative;
+            font-size: 60px;
+        }
+    }
+    #homeTitle {
+        background-color: rgba(255, 255, 255, 0.1);
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        padding-bottom: 20px;
+        div {
+            background-color: white;
+            border-radius: 50%;
+            img {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    }
+    #homeSayHello {
+        background: $main-color;
+        padding: 50px 0;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: $text-color-alternative;
+        p {
+            color: black;
+            max-width: 500px;
+            a {
+                color: red;
+            }
+        }
+    }
+    #homeRecentWorks {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        text-align: center;
+        padding: 20px 0;
+        border-color: black;
+        border-radius: 20px;
+        margin: 20px 10px;
+        a {
+            color: $text-color-alternative;
+            text-decoration: none;
+        }
+        a:hover {
+            color: white;
+        }
+        a:visited {
+            color: $text-color-alternative;
+        }
+        #myWorks {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            .myWorkExample {
+                width: 300px;
+                height: 250px;
+                border-radius: 7px;
+                margin: 5px;
+                position: relative;
+                overflow: hidden;
+                img {
+                    width: 300px;
+                    height: 250px;
+                    transform: scale(1);
+                    transition: transform 0.5s;
+                    border-radius: 10px;
+                }
+                .viewMoreExample {
+                    background-color: $color-middle-translucent;
+                    transition: background-color 3s;
+                    position: absolute;
+                    top: 0;
+                    width: 300px;
+                    height: 250px;
+                    border-radius: 10px;
+                    padding: 10px;
+                    color: white;
+                    display: flex;
+                    flex-flow: column;
+                    justify-content: center;
+                    align-items: center;
+                    .productName {
+                        color: $main-color;
+                        transition: color 1s;
+                    }
+                    .productDescription {
+                        height: 0;
+                        opacity: 0;
+                        transition: opacity 2s;
+                    }
+                    .moreExamples {
+                        opacity: 0;
+                        width: 160px;
+                        height: 0;
+                        padding: 0;
+                        border-radius: 20px;
+                        border-color: $main-color;
+                        background-color: white;
+                        transition: background-color 0.8s;
+                        a {
+                            color: black;
+                        }
+                    }
+                }
+                
+            }
+            .myWorkExample:hover {
+                img {
+                    transition: transform 0.3s;
+                    transform: scale(1.1);
+                }
+                .viewMoreExample {
+                    background-color: $color-translucent;
+                    transition: background-color 3s;
+                    .productName {
+                        color: red;
+                        transition: color 1s;
+                    }
+                    .productDescription {
+                        height: auto;
+                        opacity: 1;
+                    }
+                    .moreExamples {
+                        height: auto;
+                        opacity: 1;
+                        padding: 10px;
+                    }
+                    .moreExamples:hover {
+                        background-color: $main-color;
+                    }
+                }
+            }
+        }
+    }
+    #homeMySkills {
+        background-color: $main-color;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        padding-top: 20px;
+        h2 {
+            text-align: center;
+        }
+        hr {
+            width: 70%;
+        }
+        #mySkillsLists {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 100px;
+            .mySkillsInner {
+                transition: background-color 2s, color 1s;
+                text-align: center;
+                margin: 10px 5px;
+                width: 250px;
+                height: 320px;
+                background-color: white;
+                border-radius: 10px;
+                img {
+                    width: 70px;
+                    height: 70px;
+                    margin: 15px;
+                }
+                h4 {
+                    color: $text-color-alternative;
+                }
+                p {
+                    line-height: 30px;
+                }
+            }
+            .mySkillsInner:hover {
+                transition: background-color 1s, color 2s;
+                background-color: $color-translucent;
+                color: white;
+                img {
+                    filter: invert(100%);
+                }
+                h4 {
+                    color: $main-color;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 777px) {
+    #home {
+        #homeLogo {
+            width: 30px;
+            height: 36px;
+        }
+        #nazarSkrypnyk {
+            h1 {
+                font-size: 40px;
+            }
+        }
+        #homeTitle {
+            h2 {
+                font-size: 25px;
+            }
+            p {
+                padding: 0 20px;
+            }
+        }
+        #homeSayHello {
+            padding: 20px 50px;
+        }
+        #homeMySkills {
+            #mySkillsLists {
+                flex-flow: column;
+                align-items: center;
+                .mySkillsInner {
+                    width: 300px;
+                    height: 300px;
+                    margin-bottom: 20px;
+                    img {
+                        transform: scale(0.7);
+                        margin: 5px;
+                    }
+                    h4 {
+                        font-size: 20px;
+                    }
+                    p {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

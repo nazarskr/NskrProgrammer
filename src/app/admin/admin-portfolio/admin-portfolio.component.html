@@ -1,0 +1,63 @@
+<table class="myTable">
+    <tr>
+        <th>name</th>
+        <th>url</th>
+        <th>image</th>
+        <th>stack</th>
+        <th>description</th>
+        <th>date</th>
+        <th>edit</th>
+        <th>delete</th>
+    </tr>
+    <tr *ngFor="let product of portfolioData">
+        <td>{{product.name}}</td>
+        <td>{{product.url}}</td>
+        <td>{{product.imageUrl}}</td>
+        <td>{{product.stack}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.date.toDate() | date: 'dd/MM/yyyy, HH:mm'}}</td>
+        <td><button mat-stroked-button (click)="editProduct(product)" color="accent">edit</button></td>
+        <td><button mat-stroked-button (click)="deleteProduct(product)" color="warn">delete</button></td>
+    </tr>
+</table>
+<div class="addingForm">
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Product Name" [(ngModel)]="productName" name="productName" id="productName">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Product Url" [(ngModel)]="productUrl" name="productUrl" id="productUrl">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Product Image Url" [(ngModel)]="productImageUrl" name="productImageUrl" id="productImageUrl">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Product Stack" [(ngModel)]="productStack" name="productStack" id="productStack">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <textarea matInput placeholder="Product Description" [(ngModel)]="productDescription" name="productDescription" id="productDescription"></textarea>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Product Date" [(ngModel)]="productDate" name="productDate" id="productDate" readonly>
+        </mat-form-field>
+        <p>Product Image</p>
+        <ngx-dropzone 
+                      [accept]="'image/png,image/jpeg,image/tiff,image/svg'" 
+                      [label]="'Drop or Click'"
+                      [showPreviews]="true"
+                      [multiple]="false"
+                      #dropzone
+                      (filesAdded)="onFilesAdded($event)"
+                      (filesRejected)="onFilesRejected($event)"> 
+        </ngx-dropzone>
+        <div class="progress" *ngIf="uploadProgress$ | async as progress">
+            <div class="progress-bar progress-bar-animated" id="progress" [ngStyle]="{ 'width': progress + '%' }"></div>
+        </div>
+        <div class="lowerButtons">
+            <button mat-stroked-button (click)="dropzone.reset()" color="accent">Reset Image</button>
+            <button mat-stroked-button (click)="upload(); dropzone.reset()" color="warn">Upload Image</button>
+            <button mat-stroked-button (click)="createProduct()" color="primary">Create Product</button>
+            <button mat-stroked-button (click)="updateProduct()" color="accent">Update Product</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,29 @@
+<div id="contacts" class="page">
+    <h3>Contact me</h3>
+    <form id="contactsForm" class="my-form">
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Name" [formControl] = "nameFormControl" name="contactName" id="contactName">
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+                Name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Your e-mail" [formControl]="emailFormControl" name="messageMail" id="messageMail">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="Message full-width">
+            <textarea matInput placeholder="Leave message" [formControl] = "messageFormControl" name="messageText" id="messageText"></textarea>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+            Please, do not <strong>spam</strong>
+            </mat-error>
+        </mat-form-field>
+        <button mat-icon-button (click)="createContact()">
+            <img src="../../../assets/images/sending-mail.png" alt="Sending mail" srcset="">
+        </button>
+    </form>
+</div>

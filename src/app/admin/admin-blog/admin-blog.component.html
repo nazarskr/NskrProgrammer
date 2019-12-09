@@ -1,0 +1,51 @@
+<table class="myTable">
+    <tr>
+        <th>date</th>
+        <th>title</th>
+        <th>image</th>
+        <th>content</th>
+        <th>edit</th>
+        <th>delete</th>
+    </tr>
+    <tr *ngFor="let post of blogData">
+        <td>{{post.date.toDate() | date: 'dd/MM/yyyy, HH:mm'}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.imageUrl}}</td>
+        <td>{{post.content}}</td>
+        <td><button mat-stroked-button (click)="editBlogPost(post)" color="accent">edit</button></td>
+        <td><button mat-stroked-button (click)="deleteBlogPost(post)" color="warn">delete</button></td>
+    </tr>
+</table>
+<div class="addingForm">
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Blog Title" [(ngModel)]="blogTitle" name="blogTitle" id="blogTitle">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Blog Image Url" [(ngModel)]="blogImageUrl" name="blogImageUrl" id="blogImageUrl">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <textarea matInput placeholder="Blog content" [(ngModel)]="blogContent" name="blogContent" id="blogContent"></textarea>
+        </mat-form-field>
+        <p>Blog Image</p>
+        <ngx-dropzone 
+                      [accept]="'image/png,image/jpeg,image/tiff,image/svg'" 
+                      [label]="'Drop or Click'"
+                      [showPreviews]="true"
+                      [multiple]="false"
+                      #dropzone
+                      (filesAdded)="onFilesAdded($event)"
+                      (filesRejected)="onFilesRejected($event)"> 
+                      <!-- class="custom-dropzone" -->
+        </ngx-dropzone>
+        <div class="progress" *ngIf="uploadProgress$ | async as progress">
+            <div class="progress-bar progress-bar-animated" id="progress" [ngStyle]="{ 'width': progress + '%' }"></div>
+        </div>
+        <div class="lowerButtons">
+            <button mat-stroked-button (click)="dropzone.reset()" color="accent">Reset Image</button>
+            <button mat-stroked-button (click)="upload(); dropzone.reset()" color="warn">Upload Image</button>
+            <button mat-stroked-button (click)="createBlogPost()" color="primary">Create Blog</button>
+            <button mat-stroked-button (click)="updateBlogPost()" color="accent">Update Blog</button>
+        </div>
+    </form>
+</div>
