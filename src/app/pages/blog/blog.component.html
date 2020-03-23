@@ -11,7 +11,7 @@
             <h4 class="blogpostTitle">{{blogPost.title}}</h4>
             <p class="blogpostDate">{{blogPost.date.toDate() | date: 'dd/MM/yyyy, HH:mm'}}</p>
             <div class="blogpostText" [routerLink]="['/blog', blogpostId]">
-                <p>{{blogPost.content}}</p>
+                <p [innerHTML]="blogPost.content"></p>
                 <span>Read more . . .</span>
             </div>
         </div>

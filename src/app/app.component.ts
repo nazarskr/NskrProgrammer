@@ -37,7 +37,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         }
         window.scrollTo(0, 0);
     });
-}
+  }
   ngAfterViewInit() {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.rendererContainer.nativeElement.appendChild(this.renderer.domElement);

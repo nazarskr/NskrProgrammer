@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { ContactsService } from '../../shared/services/contacts.service';
-import { IContact } from '../../shared/interfaces';
 import { Contact } from '../../shared/classes/contacts.class';
 import { Router } from '@angular/router';
 

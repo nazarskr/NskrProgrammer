@@ -58,3 +58,15 @@ footer {
 h1, h2, h3, h4, h5, h6 {
     font-family: $main-font-bold;
 }
+
+.blogLink {
+    display: inline-block;
+    padding: 0 2px;
+    border-radius: 10px;
+    color: $main-color;
+    &:hover {
+        background-color: $main-color;
+        color: red;
+        text-decoration: none;
+    }
+}

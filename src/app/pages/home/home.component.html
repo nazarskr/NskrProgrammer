@@ -14,7 +14,8 @@
         <p [@opacityElement]="homeSayHelloVar? 'scroll' : 'static'">I started my programming way from using Max/MSP for my music projects in 2018. 
             Max/MSP is multifaceted environment for working with audio and video (creating, transforming and so on). 
             Also it's useful thing for installations and interactive projects. 
-            When I was using Max/MSP I remembered my childhood dream which was inspired by George Platen - character from Asimov's novel "Profession": to become a programmer. 
+            When I was using Max/MSP I remembered my childhood dream which was inspired by George Platen
+             - character from Asimov's novel "Profession": to become a programmer. 
             Finally I decided to become front-end developer and started studying. 
             This website is one of my projects, you also can view other my works below or in my <a routerLink="portfolio">Portfolio.</a></p>
     </div>
@@ -22,7 +23,7 @@
         <h2 [@scaleYElement]="homeRecentWorksVar? 'scroll' : 'static'">My Recent Works</h2>
         <p [@scaleYElement]="homeRecentWorksVar? 'scroll' : 'static'">Here are a few recent web projects. Want to see more? <a href="mailto:nazarskrypnyk.programmer@gmail.com">Email me.</a></p>
         <div id="myWorks">
-            <div class="myWorkExample" [@leftToRight]="homeRecentWorksVar? 'scroll' : 'static'" *ngFor="let product of portfolioData">
+            <div class="myWorkExample" [@scaleYElement]="homeRecentWorksVar? 'scroll' : 'static'" *ngFor="let product of portfolioData | slice:0:3">
                 <img src="{{product.imageUrl}}" alt="product image" srcset="">
                 <div class="viewMoreExample">
                     <h4 class="productName">{{product.name}}</h4>
@@ -44,12 +45,12 @@
             <div id="homeFrameworks" class="mySkillsInner" [@scaleXElement]="homeMySkillsVar? 'scroll' : 'static'">
                 <img src="../../../assets/images/libraries.png" alt="frameworks/libraries" srcset="">
                 <h4>Frameworks/Libraries</h4>
-                <p>Angular<br/>Bootstrap<br/>JQuery<br/>three.js<br/>reveal.js</p>
+                <p>Angular<br/>Angular Material<br/>Bootstrap<br/>RxJS<br/>Node.js<br/>three.js</p>
             </div>
             <div id="homeDevTools" class="mySkillsInner" [@rightToLeft]="homeMySkillsVar? 'scroll' : 'static'">
                 <img src="../../../assets/images/devtools.png" alt="developer tools" srcset="">
                 <h4>DevTools</h4>
-                <p>GitHub<br/>Firebase<br/>Web Audio API<br/>Visual Studio Code<br/></p>
+                <p>GitHub<br/>Firebase<br/>Web Audio API<br/>Visual Studio Code<br/>Adobe Photoshop</p>
             </div>
         </div>
     </div>

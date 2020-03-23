@@ -10,7 +10,9 @@
         background-image: url('../../../assets/images/NS\ Logo.svg');
         background-size: contain;
         background-repeat: no-repeat;
-        border: 0;
+        &:active, &:focus {
+            outline: none;
+        }
     }
     #nazarSkrypnyk {
         text-align: center;
@@ -57,7 +59,16 @@
             color: black;
             max-width: 500px;
             a {
+                display: inline-block;
+                border-radius: 10px;
+                padding: 0 3px;
                 color: red;
+                &:hover {
+                    text-decoration: none;
+                    background-color: red;
+                    color: $main-color;
+                    transition: background-color .5s;
+                }
             }
         }
     }
@@ -71,14 +82,18 @@
         border-radius: 20px;
         margin: 20px 10px;
         a {
+            display: inline-block;
+            padding: 0 3px;
+            border-radius: 10px;
             color: $text-color-alternative;
             text-decoration: none;
-        }
-        a:hover {
-            color: white;
-        }
-        a:visited {
-            color: $text-color-alternative;
+            &:hover {
+                background-color: $main-color;
+                transition: background-color .5s;
+            }
+            &:visited {
+                color: $text-color-alternative;
+            }
         }
         #myWorks {
             display: flex;
@@ -119,7 +134,6 @@
                     .productDescription {
                         height: 0;
                         opacity: 0;
-                        transition: opacity 2s;
                     }
                     .moreExamples {
                         opacity: 0;
@@ -152,6 +166,7 @@
                     .productDescription {
                         height: auto;
                         opacity: 1;
+                        transition: opacity 1s;
                     }
                     .moreExamples {
                         height: auto;

@@ -108,11 +108,7 @@ content: "";
 }
 
 .menu ul li a:hover {
-    color: black;
-}
-
-.menu ul li:hover {
-    background: $main-color;
+    color: $main-color;
 }
 
 .menuEffects {

@@ -16,10 +16,16 @@ h3 {
 .full-width {
     width: 100%;
 }
-img {
-    width: 32px;
-    height: 32px;
+button {
+    &:active, &:focus {
+        outline: none;
+    }
+    img {
+        width: 32px;
+        height: 32px;
+    }
 }
+
 @media (max-width: 500px) {
     #contactsForm {
         width: 250px;
